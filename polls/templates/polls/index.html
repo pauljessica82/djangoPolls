@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+<!--as you find a questions and put them in desc order, bullet each question-->
+    <ul>
+       {% for question in latest_question_list %}
+<!--        create a link for each question that takes user to /polls/question.id # -->
+            <li>
+              <a href="{% url 'polls:detail' question.id %}">{{question.question_text}} </a>
+
+            </li>
+
+        {% endfor %}
+
+        {% else %}
+        <p> No polls are available </p>
+        {% endif %}
+    </ul>
+
+
+<h1>{{funny_string}}</h1>
+{{question_list}}
+
+<!--brackets act as a placeholder for the def of the word. this will display all questions-->

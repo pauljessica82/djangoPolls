@@ -1,0 +1,9 @@
+.idea
+*.db
+*.xlsx
+*.pyc
+*.bak
+*.dat
+*.dir
+*.dump
+
